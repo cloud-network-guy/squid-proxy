@@ -1,0 +1,2 @@
+exmaple.mydomain.com
+.example.net
