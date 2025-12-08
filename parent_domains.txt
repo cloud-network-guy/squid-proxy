@@ -1,1 +1,2 @@
+intranet.mydomain.com
 .mydomain.internal

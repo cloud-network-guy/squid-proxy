@@ -1,11 +1,11 @@
 # Squid Proxy
 
-Squid proxy 5.X based on Debian 12 base image
+Squid Proxy / Web Cache 6.X based on Debian 13 "Trixie"
 
 Supports:
 
-  - Control of Internal IP addresses
-  - Destination domain allow listing
-  - Sending certain domains to Parent proxies
-  - Restrictions on TLS Ports
+  - Granular control of Internal IP addresses
+  - Destination domain allow listing leveraging SNI header
+  - Forwarding certain domains to Parent proxies
+  - Restrictions on HTTP & TLS Ports
   - JSON logging format

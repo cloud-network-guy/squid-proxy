@@ -1,0 +1,6 @@
+10.0.0.0/8      # RFC1918 possible internal network
+172.16.0.0/12   # RFC1918 possible internal network
+192.168.0.0/16  # RFC1918 possible internal network
+100.64.0.0/10   # RFC6598 CGNAT Space
+fc00::/7        # RFC 4193 local private network range
+fe80::/10       # RFC 4291 link-local (directly plugged) machines

@@ -1,2 +1,2 @@
-exmaple.mydomain.com
+example.mydomain.com
 .example.net
