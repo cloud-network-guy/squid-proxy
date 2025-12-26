@@ -1,7 +1,9 @@
-FROM debian:trixie-slim
-ARG DEBIAN_FRONTEND=noninteractive
+ARG IMAGE=debian
+ARG IMAGE_TAG="trixie-slim"
+FROM ${IMAGE}:${IMAGE_TAG}
 ARG PACKAGES="squid curl wget net-tools iputils-ping dnsutils"
-ENV PORT="3128"
+ARG DEBIAN_FRONTEND=noninteractive
+ENV PORT=3128
 WORKDIR /tmp
 # Install Packages
 RUN apt update && apt upgrade -y && apt install -y $PACKAGES && apt clean
