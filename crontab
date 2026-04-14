@@ -1,0 +1,1 @@
+* * * * * root python3 /tmp/update_config_files.py >> /var/log/cron.log
