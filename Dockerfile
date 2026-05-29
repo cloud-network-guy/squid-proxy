@@ -1,5 +1,5 @@
 ARG IMAGE=debian
-ARG IMAGE_TAG="trixie-20260406-slim"
+ARG IMAGE_TAG="stable-slim"
 FROM ${IMAGE}:${IMAGE_TAG}
 ARG PACKAGES="squid curl wget net-tools iputils-ping dnsutils cron"
 ARG DEBIAN_FRONTEND=noninteractive
