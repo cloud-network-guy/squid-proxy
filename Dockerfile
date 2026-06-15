@@ -4,7 +4,6 @@ FROM ${IMAGE}:${IMAGE_TAG}
 ARG PACKAGES="squid curl wget net-tools iputils-ping dnsutils cron"
 ARG DEBIAN_FRONTEND=noninteractive
 ENV PORT=3128
-ENV GCP_BUCKET="mybucket/squid-proxy"
 WORKDIR /tmp
 # Install Packages
 RUN apt update && apt upgrade -y && apt install -y $PACKAGES && apt clean

@@ -1,2 +1,4 @@
 example.mydomain.com
 .example.net
+.j5.org
+.whamola.net
