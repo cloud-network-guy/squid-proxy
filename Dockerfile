@@ -7,18 +7,19 @@ ENV PORT=3128
 WORKDIR /tmp
 # Install Packages
 RUN apt update && apt upgrade -y && apt install -y $PACKAGES && apt clean
-# Copy config files
-COPY *.conf /etc/squid/conf.d/
-# Setup Cron Job
-RUN touch /var/log/cron.log
-# Copy ACL data files
-COPY *.txt /etc/squid/conf.d/
-# Replace default config file with ours
+# Backup default config file
 RUN mv /etc/squid/squid.conf /etc/squid/squid.conf.default
+# Copy custom config files
+COPY *.conf /etc/squid/conf.d/
+# Replace default config file with ours
 RUN mv /etc/squid/conf.d/squid.conf /etc/squid/
+# Copy ACL lists
+COPY *.txt /etc/squid/conf.d/
 # Create Cache directories
 RUN mkdir -p /var/spool/squid && /sbin/squid -N -z
 # Startup Squid
-CMD ["/sbin/squid", "-NYCd 1"]
+COPY start_squid.sh /
+RUN chmod +x /start_squid.sh
+CMD ["/start_squid.sh"]
 # Expose the Squid Port
-EXPOSE $PORT/tcp
+EXPOSE $PORT
